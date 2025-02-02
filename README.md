@@ -1,4 +1,4 @@
-# Projects
+# Projects <3
 
 Welcome to the Projects repository! This repository contains a collection of various projects that I am working on. Below is a list of the current projects:
 
