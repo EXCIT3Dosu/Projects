@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>MipBox.eu</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
+    <div id="top-bar">
+        <div id="language-selector">
+            <button id="language-btn">Language</button>
+            <div id="language-options" class="hidden">
+                <button id="lang-pl">Polski</button>
+                <button id="lang-en">English</button>
+            </div>
+        </div>
+        <div id="user-info" class="hidden">
+            <span id="username-display"></span>
+            <button id="logout-btn" class="hidden">Log out</button>
+        </div>
+    </div>
     <div class="container">
-        <h1>Witaj na stronie MipBox.eu</h1>
-        <p>Strona w budowie</p>
-        <p>W międzyczasie zapraszam na <a href="https://discord.gg/ymA3fKJNVb">discorda</a></p>
-        <button id="login-btn">Zaloguj się</button>
-        <button id="signup-btn">Zarejestruj się</button>
+        <h1 id="title">Welcome to MipBox.eu</h1>
+        <p id="under-construction">Site under construction</p>
+        <p id="invite">In the meantime, join us on <a href="https://discord.gg/ymA3fKJNVb">Discord</a></p>
+        <p id="test-invite">If you want to test the site, please register.</p>
+        <button id="login-btn">Log in</button>
+        <button id="signup-btn">Sign up</button>
     </div>
-    <div id="user-info" class="hidden">
-        <span id="username-display"></span>
-        <button id="logout-btn">Wyloguj się</button>
-    </div>
-    <script>
-        document.getElementById('login-btn').addEventListener('click', () => {
-            window.location.href = 'login.html';
-        });
-
-        document.getElementById('signup-btn').addEventListener('click', () => {
-            window.location.href = 'signup.html';
-        });
-
-        const username = localStorage.getItem('loggedInUser');
-        if (username) {
-            document.querySelector('.container').classList.add('hidden');
-            document.getElementById('user-info').classList.remove('hidden');
-            document.getElementById('username-display').textContent = `Zalogowany jako: ${username}`;
-        }
-
-        document.getElementById('logout-btn').addEventListener('click', () => {
-            localStorage.removeItem('loggedInUser');
-            window.location.reload();
-        });
-    </script>
+    <script src="home.js"></script>
 </body>
 </html>
