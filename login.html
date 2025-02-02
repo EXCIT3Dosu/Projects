@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie/Rejestracja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+        }
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        .toggle-link {
+            margin-top: 10px;
+            display: block;
+            cursor: pointer;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="form-title">Logowanie</h2>
+        <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+        <input type="password" id="password" placeholder="Hasło" required>
+        <button id="submit-btn">Zaloguj się</button>
+        <span class="toggle-link" id="toggle-link">Nie masz konta? Zarejestruj się</span>
+    </div>
+
+    <script>
+        const formTitle = document.getElementById('form-title');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const submitBtn = document.getElementById('submit-btn');
+        const toggleLink = document.getElementById('toggle-link');
+
+        let isLogin = true;
+
+        toggleLink.addEventListener('click', () => {
+            isLogin = !isLogin;
+            if (isLogin) {
+                formTitle.textContent = 'Logowanie';
+                submitBtn.textContent = 'Zaloguj się';
+                toggleLink.textContent = 'Nie masz konta? Zarejestruj się';
+            } else {
+                formTitle.textContent = 'Rejestracja';
+                submitBtn.textContent = 'Zarejestruj się';
+                toggleLink.textContent = 'Masz już konto? Zaloguj się';
+            }
+        });
+
+        submitBtn.addEventListener('click', () => {
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            if (isLogin) {
+                const storedUsername = localStorage.getItem('username');
+                const storedPassword = localStorage.getItem('password');
+
+                if (username === storedUsername && password === storedPassword) {
+                    alert('Logowanie udane!');
+                } else {
+                    alert('Nieprawidłowa nazwa użytkownika lub hasło');
+                }
+            } else {
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                alert('Konto zostało utworzone pomyślnie!');
+            }
+        });
+    </script>
+</body>
+</html>
