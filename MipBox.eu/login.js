@@ -30,6 +30,46 @@ document.getElementById('login-btn').addEventListener('click', () => {
     }
 });
 
+const languageBtn = document.getElementById('language-btn');
+const languageOptions = document.getElementById('language-options');
+const langPl = document.getElementById('lang-pl');
+const langEn = document.getElementById('lang-en');
+const langDe = document.getElementById('lang-de');
+const langEs = document.getElementById('lang-es');
+
+languageBtn.addEventListener('click', () => {
+    if (languageOptions.style.display === 'none' || languageOptions.style.display === '') {
+        languageOptions.style.display = 'block';
+    } else {
+        languageOptions.style.display = 'none';
+    }
+});
+
+langPl.addEventListener('click', () => {
+    setLanguage('pl');
+    languageOptions.style.display = 'none';
+});
+
+langEn.addEventListener('click', () => {
+    setLanguage('en');
+    languageOptions.style.display = 'none';
+});
+
+langDe.addEventListener('click', () => {
+    setLanguage('de');
+    languageOptions.style.display = 'none';
+});
+
+langEs.addEventListener('click', () => {
+    setLanguage('es');
+    languageOptions.style.display = 'none';
+});
+
+function setLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    applyLanguage(lang);
+}
+
 function applyLanguage(lang) {
     if (lang === 'pl') {
         document.getElementById('form-title').textContent = 'Logowanie';
@@ -39,6 +79,25 @@ function applyLanguage(lang) {
         document.getElementById('signup-link').textContent = 'Nie masz konta? Zarejestruj się';
         document.getElementById('logged-in-message').querySelector('p').textContent = 'Jesteś już zalogowany.';
         document.getElementById('home-btn').textContent = 'Wróć do strony głównej';
+        languageBtn.textContent = 'Język';
+    } else if (lang === 'de') {
+        document.getElementById('form-title').textContent = 'Einloggen';
+        document.getElementById('username').placeholder = 'Benutzername';
+        document.getElementById('password').placeholder = 'Passwort';
+        document.getElementById('login-btn').textContent = 'Einloggen';
+        document.getElementById('signup-link').textContent = 'Haben Sie kein Konto? Registrieren';
+        document.getElementById('logged-in-message').querySelector('p').textContent = 'Sie sind bereits eingeloggt.';
+        document.getElementById('home-btn').textContent = 'Zurück zur Startseite';
+        languageBtn.textContent = 'Sprache';
+    } else if (lang === 'es') {
+        document.getElementById('form-title').textContent = 'Iniciar sesión';
+        document.getElementById('username').placeholder = 'Nombre de usuario';
+        document.getElementById('password').placeholder = 'Contraseña';
+        document.getElementById('login-btn').textContent = 'Iniciar sesión';
+        document.getElementById('signup-link').textContent = '¿No tienes una cuenta? Registrarse';
+        document.getElementById('logged-in-message').querySelector('p').textContent = 'Ya has iniciado sesión.';
+        document.getElementById('home-btn').textContent = 'Volver a la página principal';
+        languageBtn.textContent = 'Idioma';
     } else {
         document.getElementById('form-title').textContent = 'Login';
         document.getElementById('username').placeholder = 'Username';
@@ -47,6 +106,7 @@ function applyLanguage(lang) {
         document.getElementById('signup-link').textContent = 'Don\'t have an account? Sign up';
         document.getElementById('logged-in-message').querySelector('p').textContent = 'You are already logged in.';
         document.getElementById('home-btn').textContent = 'Go back home';
+        languageBtn.textContent = 'Language';
     }
 }
 
