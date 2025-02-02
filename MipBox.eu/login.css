@@ -45,10 +45,16 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
+    transition: background-color 0.3s, transform 0.2s; /* Add transition for animation */
 }
 
 .container button:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.container button:active {
+    transform: scale(0.95); /* Scale down on click */
 }
 
 .toggle-link {

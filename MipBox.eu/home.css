@@ -19,6 +19,16 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.plushie-image {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
 .container {
     background-color: white;
     padding: 20px;
@@ -56,10 +66,16 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Add transition for animation */
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Scale down on click */
 }
 
 .hidden {
@@ -99,8 +115,14 @@ button:hover {
     cursor: pointer;
     text-align: left;
     color: white; /* Ensure readability */
+    transition: background-color 0.3s, transform 0.2s; /* Add transition for animation */
 }
 
 #language-options button:hover {
     background-color: #0056b3; /* Match site style */
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+#language-options button:active {
+    transform: scale(0.95); /* Scale down on click */
 }
