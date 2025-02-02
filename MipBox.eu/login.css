@@ -4,37 +4,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f0f0f0;
+    background-color: #f0f0f0; /* Match home page background */
     margin: 0;
     overflow: hidden;
-}
-
-@keyframes moveBackground {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
-}
-
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
-    animation: moveBackground 10s linear infinite;
-    z-index: -1;
 }
 
 .container {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     width: 350px;
     text-align: center;
     position: relative;
     z-index: 1;
+    border: 1px solid rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.5);
 }
 
 .container h2 {
