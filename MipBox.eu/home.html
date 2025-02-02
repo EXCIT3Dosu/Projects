@@ -10,6 +10,33 @@
         <h1>Witaj na stronie MipBox.eu</h1>
         <p>Strona w budowie</p>
         <p>W międzyczasie zapraszam na <a href="https://discord.gg/ymA3fKJNVb">discorda</a></p>
+        <button id="login-btn">Zaloguj się</button>
+        <button id="signup-btn">Zarejestruj się</button>
     </div>
+    <div id="user-info" class="hidden">
+        <span id="username-display"></span>
+        <button id="logout-btn">Wyloguj się</button>
+    </div>
+    <script>
+        document.getElementById('login-btn').addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+
+        document.getElementById('signup-btn').addEventListener('click', () => {
+            window.location.href = 'signup.html';
+        });
+
+        const username = localStorage.getItem('loggedInUser');
+        if (username) {
+            document.querySelector('.container').classList.add('hidden');
+            document.getElementById('user-info').classList.remove('hidden');
+            document.getElementById('username-display').textContent = `Zalogowany jako: ${username}`;
+        }
+
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('loggedInUser');
+            window.location.reload();
+        });
+    </script>
 </body>
 </html>
