@@ -9,6 +9,11 @@ body {
     overflow: hidden;
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
 .container {
     background-color: white;
     padding: 30px;
@@ -20,6 +25,11 @@ body {
     z-index: 1;
     border: 1px solid rgba(0, 123, 255, 0.5);
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .container h2 {
@@ -48,13 +58,26 @@ body {
     transition: background-color 0.3s, transform 0.2s; /* Add transition for animation */
 }
 
+body.dark-mode button {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
 .container button:hover {
     background-color: #0056b3;
     transform: scale(1.05); /* Scale up on hover */
 }
 
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
 .container button:active {
     transform: scale(0.95); /* Scale down on click */
+}
+
+body.dark-mode button:active {
+    background-color: #777;
 }
 
 .toggle-link {

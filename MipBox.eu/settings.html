@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div id="top-bar">
+        <a href="Home.html">
+            <img src="Assets/MipBox.eu.png" alt="MipBox Logo" class="logo">
+        </a>
+        <div class="center-buttons">
+            <button id="home-btn">Home</button>
+        </div>
+        <div id="user-info" class="hidden">
+            <span id="username-display"></span>
+            <button id="settings-btn" class="hidden">Settings</button>
+            <button id="logout-btn" class="hidden">Log out</button>
+            <button id="admin-btn" class="hidden">Admin Panel</button>
+        </div>
+    </div>
+    <div class="container">
+        <h2 id="settings-title">Settings</h2>
+        <div id="language-selector">
+            <label for="language-options" id="language-label">Choose Language:</label>
+            <select id="language-options">
+                <option value="en">English</option>
+                <option value="pl">Polski</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+        <div id="dark-mode-selector">
+            <label for="dark-mode-toggle" id="dark-mode-label">Dark Mode:</label>
+            <input type="checkbox" id="dark-mode-toggle">
+        </div>
+        <button id="save-btn">Save</button>
+    </div>
+    <script src="settings.js"></script>
+</body>
+</html>

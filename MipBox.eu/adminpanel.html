@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="adminpanel.css">
+</head>
+<body>
+    <button id="back-home-btn" class="back-home-btn">Back to Home</button>
+    <div id="access-denied" style="display: none;">
+        <h1>Access Denied</h1>
+        <p>You do not have access to this site.</p>
+        <button id="home-btn">Go back home</button>
+    </div>
+    <div id="admin-panel" style="display: none;">
+        <div class="sidebar">
+            <button id="adminpanel-btn" class="active">Admin Panel</button>
+            <button id="usermanagement-btn">User Management</button>
+        </div>
+        <div class="content">
+            <h2>Welcome to the Admin Panel</h2>
+            <p>Select an option from the sidebar.</p>
+        </div>
+    </div>
+    <script src="adminpanel.js"></script>
+</body>
+</html>

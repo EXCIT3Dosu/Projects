@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MipBox.eu</title>
-    <link rel="stylesheet" href="home.css">
+    <title>Plans</title>
+    <link rel="stylesheet" href="plans.css">
 </head>
 <body>
     <div id="top-bar">
@@ -21,17 +21,23 @@
             <button id="admin-btn" class="hidden">Admin Panel</button>
         </div>
     </div>
-    <div class="content">
-        <img src="Assets/Plushie.png" alt="Plushie" class="plushie-image">
-        <div class="container">
-            <h1 id="title">Welcome to MipBox.eu</h1>
-            <p id="under-construction">Site under construction</p>
-            <p id="invite">In the meantime, join us on <a href="https://discord.gg/ymA3fKJNVb">Discord</a></p>
-            <p id="test-invite">If you want to test the site, please register.</p>
-            <button id="login-btn">Log in</button>
-            <button id="signup-btn">Sign up</button>
+    <div class="plans-container">
+        <div class="plan" id="free-plan">
+            <h3>Free Plan</h3>
+            <p>$0 / month</p>
+            <button class="purchase-btn" data-plan="free">Buy Plan</button>
+        </div>
+        <div class="plan" id="basic-plan">
+            <h3>Basic Plan</h3>
+            <p>$10 / month</p>
+            <button class="purchase-btn" data-plan="basic">Buy Plan</button>
+        </div>
+        <div class="plan" id="premium-plan">
+            <h3>Premium Plan</h3>
+            <p>$25 / month</p>
+            <button class="purchase-btn" data-plan="premium">Buy Plan</button>
         </div>
     </div>
-    <script src="home.js"></script>
+    <script src="plans.js"></script>
 </body>
 </html>

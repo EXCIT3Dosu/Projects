@@ -7,6 +7,9 @@ if (loggedInUser) {
     document.getElementById('logged-in-message').style.display = 'none';
 }
 
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+document.body.classList.toggle('dark-mode', isDarkMode);
+
 document.getElementById('home-btn').addEventListener('click', () => {
     window.location.href = 'Home.html';
 });
@@ -18,10 +21,14 @@ document.getElementById('signup-link').addEventListener('click', () => {
 document.getElementById('login-btn').addEventListener('click', () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const storedUsername = localStorage.getItem('username');
-    const storedPassword = localStorage.getItem('password');
 
-    if (username === storedUsername && password === storedPassword) {
+    // Retrieve existing users from localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Check if the user exists and the password matches
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (user) {
         localStorage.setItem('loggedInUser', username);
         window.location.href = 'Home.html';
     } else {

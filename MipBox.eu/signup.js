@@ -7,6 +7,9 @@ if (loggedInUser) {
     document.getElementById('logged-in-message').style.display = 'none';
 }
 
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+document.body.classList.toggle('dark-mode', isDarkMode);
+
 document.getElementById('home-btn').addEventListener('click', () => {
     window.location.href = 'Home.html';
 });
@@ -18,8 +21,16 @@ document.getElementById('login-link').addEventListener('click', () => {
 document.getElementById('signup-btn').addEventListener('click', () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', password);
+
+    // Retrieve existing users from localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Add new user to the array
+    users.push({ username, password });
+
+    // Store updated users array in localStorage
+    localStorage.setItem('users', JSON.stringify(users));
+
     document.getElementById('message').style.color = 'green';
     document.getElementById('message').textContent = 'Account created successfully!';
     setTimeout(() => {
