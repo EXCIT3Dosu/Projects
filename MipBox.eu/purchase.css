@@ -9,7 +9,7 @@ body {
 }
 
 body.dark-mode {
-    background-color: #121212;
+    background-color: #1c1c1c;
     color: #e0e0e0;
 }
 
@@ -22,7 +22,7 @@ body.dark-mode {
 }
 
 body.dark-mode .container {
-    background-color: #1e1e1e;
+    background-color: #2a2a2a;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
@@ -42,7 +42,7 @@ button {
 }
 
 body.dark-mode button {
-    background-color: #333;
+    background-color: #444;
     color: #e0e0e0;
 }
 
@@ -60,5 +60,5 @@ button:active {
 }
 
 body.dark-mode button:active {
-    background-color: #777;
+    background-color: #666;
 }
